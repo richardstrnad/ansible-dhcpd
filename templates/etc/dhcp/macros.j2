@@ -144,6 +144,7 @@ host {{ host.hostname }}-hw{{ loop.index }} {
 {% if host.address is defined and host.address %}
         fixed-address {{ host.address }};
 {% endif %}
+        option host-name "{{ host.hostname }}";
 }
 {% endfor %}
 {% else %}
@@ -160,6 +161,7 @@ host {{ host.hostname }} {
 {% else %}
         fixed-address {{ host.address }};
 {% endif %}
+        option host-name "{{ host.hostname }}";
 {% endif %}
 }
 {% endif %}
